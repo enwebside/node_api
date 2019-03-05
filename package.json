@@ -1,0 +1,21 @@
+{
+  "name": "node_api",
+  "version": "1.0.0",
+  "description": "A simple Node api",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node index.js",
+    "dev" : "nodemon index.js"
+  },
+  "author": "David Aasen",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.4.17",
+    "mongoose-timestamp": "^0.6.0",
+    "restify": "^8.0.0",
+    "restify-errors": "^7.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
