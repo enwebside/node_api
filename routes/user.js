@@ -1,7 +1,7 @@
 const userFromModel = require('../modules/User');
 const config = require('../config');
 const errors = require('restify-errors');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const auth = require('../auth');
 
