@@ -10,6 +10,7 @@
   "author": "David Aasen",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^8.5.0",
     "mongoose": "^5.4.17",
