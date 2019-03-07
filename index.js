@@ -1,12 +1,13 @@
 const restify = require('restify');
 const mongoose = require('mongoose');
 const config = require('./config');
+const cors = require('cors');
 
 
 const server = restify.createServer();
 
 server.use(restify.plugins.bodyParser());
-
+server.use(cors());
 
 server.listen(config.PORT, () => {
     mongoose.set('useFindAndModify', false);
