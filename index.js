@@ -10,13 +10,13 @@ server.use(restify.plugins.bodyParser());
 
 
 const corsOptions = {
-  origin: ["*"],
-  methods: ["GET","HEAD","PUT","PATCH","POST","DELETE"],
-  allowedHeaders:["Content-Type","Authorization"],
+  origin: '*',
+  methods: 'GET','HEAD','PUT','PATCH','POST','DELETE'],
+  allowedHeaders:'Content-Type','Authorization',
   preflightContinue: false,
   optionsSuccessStatus: 204
 }
-server.use(cors());
+server.use(cors(corsOptions));
 
 server.listen(config.PORT, () => {
     mongoose.set('useFindAndModify', false);
