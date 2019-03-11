@@ -12,8 +12,8 @@ server.use(restify.plugins.bodyParser());
 
 server.use(cors({
   origin: '*',
-  methods: 'GET','HEAD','PUT','PATCH','POST','DELETE',
-  allowedHeaders:'Content-Type','Authorization',
+  methods: ['GET','HEAD','PUT','PATCH','POST','DELETE'],
+  allowedHeaders:['Content-Type','Authorization'],
   preflightContinue: false,
   optionsSuccessStatus: 204
   
