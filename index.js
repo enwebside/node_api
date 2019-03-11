@@ -3,20 +3,20 @@ const mongoose = require('mongoose');
 const config = require('./config');
 const corsMiddleware = require('restify-cors-middleware')
 
-
-
-
+const corsx = corsMiddleware({
+  origins: ['*'],
+  allowHeaders: ['Content-type', 'Authorization'],
+  exposeHeaders: []
+});
 
 const server = restify.createServer();
 
+
+
+
+server.pre(corsx.preflight);
+server.use(corsx.actual);
 server.use(restify.plugins.bodyParser());
-const cors = corsMiddleware({
-  origins: ['*']
-});
-
-server.pre(cors.preflight);
-server.use(cors.actual);
-
 
 
 
