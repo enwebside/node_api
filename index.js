@@ -3,21 +3,21 @@ const mongoose = require('mongoose');
 const config = require('./config');
 const corsMiddleware = require('restify-cors-middleware')
 
-const cors = corsMiddleware({
-  
-  origins: '*'
-  
-})
 
-server.pre(cors.preflight)
-server.use(cors.actual)
 
 
 
 const server = restify.createServer();
 
 server.use(restify.plugins.bodyParser());
+const cors = corsMiddleware({
+  
+  origins: '*'
+  
+});
 
+server.pre(cors.preflight);
+server.use(cors.actual);
 
 
 
