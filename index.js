@@ -1,7 +1,17 @@
 const restify = require('restify');
 const mongoose = require('mongoose');
 const config = require('./config');
-const cors = require('cors');
+const corsMiddleware = require('restify-cors-middleware')
+
+const cors = corsMiddleware({
+  
+  origins: ['*']
+  
+})
+
+server.pre(cors.preflight)
+server.use(cors.actual)
+
 
 
 const server = restify.createServer();
@@ -10,14 +20,7 @@ server.use(restify.plugins.bodyParser());
 
 
 
-server.use(cors({
-  origin: '*',
-  methods: ['GET','HEAD','PUT','PATCH','POST','DELETE'],
-  allowedHeaders:['Content-Type','Authorization'],
-  preflightContinue: true,
-  optionsSuccessStatus: 204
-  
-}));
+
 
 server.listen(config.PORT, () => {
     mongoose.set('useFindAndModify', false);
