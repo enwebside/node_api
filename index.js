@@ -11,9 +11,7 @@ const server = restify.createServer();
 
 server.use(restify.plugins.bodyParser());
 const cors = corsMiddleware({
-  
-  origins: '*'
-  
+  origins: ['*']
 });
 
 server.pre(cors.preflight);
