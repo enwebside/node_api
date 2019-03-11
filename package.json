@@ -10,14 +10,16 @@
   "author": "David Aasen",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
+    
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^8.5.0",
     "mongoose": "^5.4.17",
     "mongoose-timestamp": "^0.6.0",
     "restify": "^8.0.0",
     "restify-errors": "^7.0.0",
+    "restify-cors-middleware": "^1.1.1"
     "restify-jwt-community": "^1.0.9"
+    
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
